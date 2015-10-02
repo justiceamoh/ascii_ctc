@@ -175,10 +175,9 @@ for epoch in range(NUM_EPOCHS):
 
 	for batch in range(num_batches_train):
 		batch_slice = slice(N_BATCH * batch, N_BATCH * (batch + 1))
+        xi = sequences[batch_slice]
+        yi = labels[batch_slice]
 		if batch < split_ratio:
-			xi = sequences[batch_slice]
-			yi = labels[batch_slice]
-
 			loss, ploss, probs = train(xi,yi)
 			tlosses.append(loss)
 			plosses.append(ploss)
