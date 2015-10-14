@@ -5,7 +5,7 @@
 output='data.pkl'
 alphabet='ascii'
 seqlen=22
-noise=0.08
+noise=0.05
 
 # python scribe.py data.pkl ascii
 python scribe.py $output $alphabet $seqlen $noise

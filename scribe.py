@@ -5,9 +5,10 @@ import sys
 from print_utils import slab_print
 from scribe_ascii import ascii_alphabet
 
+nsamples=50000
 
 class Scribe():
-    def __init__(self, alphabet, avg_seq_len, noise=0., vbuffer=2, hbuffer=3,):
+    def __init__(self, alphabet, avg_seq_len, noise=0.0, vbuffer=2, hbuffer=3,):
         self.alphabet = alphabet
         self.len = avg_seq_len
         self.hbuffer = hbuffer
@@ -76,7 +77,7 @@ def main():
 
     xs = []
     ys = []
-    for i in range(1000):
+    for i in range(nsamples):
         x, y = scribe.get_sample(variable_len)
         xs.append(x)
         ys.append(y)
